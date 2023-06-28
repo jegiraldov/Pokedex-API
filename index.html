@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    
+    <title>Pokemon</title>
+</head>
+<body>
+    <header>
+        <img class="pokebola" src="https://corporate.pokemon.com/hero-pokeball-3430739968171e9fe85357e4739be704.png"/>
+        
+        <p>POKÉDEX_</p>
+        <input type="text" class="search" id="search" placeholder="Buscador">
+    </header>
+    
+    <main>
+        <section class="container">
+            <div class="charizard">
+                <div class="charizard_titulo">
+                    <img class="emoji_fuego" src="https://images.emojiterra.com/google/android-11/512px/1f525.png" alt="">
+                    <h1 id="name">CHARIZARD</h1>
+                </div>
+
+                <div class="charizard_png">
+                    <img class="charizard-img" id="pokemon-avatar" src="https://freepngimg.com/thumb/pokemon/106167-pokemon-charizard-free-hq-image.png">
+                </div>
+            </div>
+
+            <div class="skills">
+                <div class="column1">
+                    <div class="skills_one" id="skill1">
+                        <p>NO.</p>
+                        <p> 
+                            <span id="pokemon-number"> 006 </span>
+
+                        </p>
+                    </div>
+                    <div class="skills_one" id="skill2">
+                        <p>TYPE</p>
+                        <p>
+                            <span id="pokemon-type">FIRE</span>
+                        </p>
+                    </div>
+                    <div class="skills_one" id="skill3">
+                        <p>HEIGHT</p>
+                        <p> 
+                            <span id="pokemon-height"> 1,7 m </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="column2">
+                    <div class="skills_one" id="skill4">
+                        <p>LEVEL</p>
+                        <p> 
+                            <span id="pokemon-level">100</span>
+                        </p>
+                    </div>
+                    <div class="skills_one" id="skill5">
+                        <p>HABILITY</p>
+                        <p> 
+                            <span id="pokemon-skill">FLAMES</span>
+                        </p>
+                    </div>
+                    <div class="skills_one" id="skill6">
+                        <p>WEIGHT</p>
+                        <p> 
+                            <span id="pokemon-weight">90,5 kg</span>
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <Footer>
+        <section class="main-footer">
+            <p> <span> OTHERS </span></p>
+            <div id="lista">
+                <div class="pokemon" >
+                    <img src="https://img.icons8.com/carbon-copy/100/1A1A1A/dratini.png"/>
+                </div>
+                <div class="pokemon">
+                    <img src="https://img.icons8.com/carbon-copy/100/1A1A1A/bullbasaur.png"/>
+                </div>
+                <div class="pokemon">
+                    <img src="https://img.icons8.com/carbon-copy/100/1A1A1A/eevee.png"/>
+                </div>
+                <div class="pokemon">
+                    <img src="https://img.icons8.com/carbon-copy/100/1A1A1A/jigglypuff.png"/>
+                </div>
+            </div>
+        </section>
+    </Footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>
