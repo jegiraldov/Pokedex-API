@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: rgb(92, 88, 88);
+    color: aliceblue;
+    
+}
+
+.search{
+    margin-left: 4rem;
+    padding: 8px;
+
+    border-radius: 10px;
+    border: none;
+    background: #eee;}
+
+
+.pokebola{
+    width: 50px;
+    padding: 8px;
+    color: aliceblue;
+}
+
+main {
+    background-image: linear-gradient(to right, rgba(167, 160, 160, 0.916), gray);
+    padding-bottom: 100px;
+    max-width: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 100px;
+    position: relative;
+}
+
+.charizard{
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    width: 50%;
+    /* height: 60px; */
+    
+}
+
+.charizard_titulo{
+    display: flex;
+    width: 100%;
+    /* height: 100%; */
+    justify-content: center;
+    background-color: aliceblue;
+    align-items: center;
+    border-radius: 20px;
+    height: 60px
+}
+
+.charizard_png {
+    width: 100%;
+    padding-top: 50px;
+}
+
+.charizard_png img{
+    width: 100%;
+}
+    
+
+.emoji_fuego {
+    width: 30px;
+    margin-right: 8px;
+}
+
+.charizard_titulo{
+    flex-direction: row;
+}
+
+.skills{
+    display: flex;
+    width: 40%;
+    /* height: 50%; */
+    background-color: aliceblue;
+    margin-top: 18px;
+    border-radius: 20px;
+    /* margin-top: 12px;
+    margin-bottom: 12px; */
+    color: gray;
+    align-items: center;
+    justify-content: center;
+}
+
+.column2{
+    justify-content: center;
+    align-items: center;
+}
+
+.skills_one{
+    padding: 30px;    
+}
+
+span{
+    font-size: medium;
+    font-weight: bold;
+
+}
+
+footer{
+    background-color: aliceblue;
+    max-width: 1200px;
+
+}
+
+/* footer p{
+    color: gray;
+    padding: 10px 25px
+} */
+
+.main-footer{
+    align-items: center;
+    padding: 10px 25px;
+    color: gray;
+    display: grid;
+    grid-template-columns: 1fr 1fr
+}
+
+.lista{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 30%;
+    align-items: center;
+}
+
+.pokemon {
+    background-color: rgb(176, 171, 171);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    gap: 8px;
+    align-items: center;
+
+}
+
+.pokemon:hover {
+    background-color: gray;
+    cursor: pointer;
+    color: #eee;
+}
+
+@media (max-width: 600px){
+    header {
+        justify-content: center;
+        padding: 12px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    
+    }
+
+    .charizard{
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .charizard_titulo{
+        width: 180%;
+    }
+    
+    .charizard_png{
+        position: absolute;
+        /* width: 80%; */
+        margin-top: -20px;
+        width: 300px;
+        
+
+    }
+
+    .skills{
+        margin-top: 220px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: auto;
+        height: 300px;
+        padding: 0;
+        /* align-items: center; */
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .skills_one{
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-footer{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: auto;
+        gap: 20px;
+        height: 300px;
+    }
+
+    .lista{
+        justify-content: space-around;
+        /* align-items: center; */
+        width: 300px;
+    }
+}
