@@ -35,8 +35,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   elSearch.addEventListener("input", () => {
     const value = elSearch.value.trim();
-    console.log(value);
-    console.log(value.length);
     if (value.length > 0) {
       const newList = pokemons.filter((p) => p.name.includes(value));
       optionMenu.classList.remove("hidden");
@@ -59,11 +57,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Obtener el valor seleccionado
     if (event.target.tagName === "LI") {
       const selectedValue = event.target.getAttribute("data-value");
-      console.log(selectedValue);
       const pokemonselect = await getPokemon(selectedValue);
-      const pokemonList = await getPokemonsType(pokemonselect);
+      const pokemonList = await getPokemonsType(pokemonselect.type);
       printPokemon(pokemonselect, pokemonMainEl);
-
+      listPokemons = [];
       pokemonList.forEach(async (pokemon, index) => {
         return new Promise(async (resolve, reject) => {
           try {
@@ -82,16 +79,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   searchBtn.addEventListener("click", async () => {
-    console.log(elSearch.value);
     if (elSearch.value.length > 0) {
       const pokemonsearch = await getPokemon(elSearch.value);
       printPokemon(pokemonsearch, pokemonMainEl);
       elSearch.value = "";
 
       const pokemonList = await getPokemonsType(pokemonsearch.type);
-      console.log(pokemonList);
       printPokemon(pokemonsearch, pokemonMainEl);
-
+      listPokemons = [];
       pokemonList.forEach(async (pokemon, index) => {
         return new Promise(async (resolve, reject) => {
           try {

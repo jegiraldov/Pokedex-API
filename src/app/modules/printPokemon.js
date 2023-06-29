@@ -1,5 +1,4 @@
 const printPokemon = (pokemon, container) => {
-  console.log(pokemon);
   container.innerHTML = `
     <div class="charizard">
         <div class="charizard_titulo">
