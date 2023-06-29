@@ -55,12 +55,56 @@ document.addEventListener("DOMContentLoaded", async () => {
     optionMenu.classList.add("hidden");
   });
 
+  lista.addEventListener("click", async (event) => {
+    // Obtener el valor seleccionado
+    if (event.target.tagName === "LI") {
+      const selectedValue = event.target.getAttribute("data-value");
+      console.log(selectedValue);
+      const pokemonselect = await getPokemon(selectedValue);
+      const pokemonList = await getPokemonsType(pokemonselect);
+      printPokemon(pokemonselect, pokemonMainEl);
+
+      pokemonList.forEach(async (pokemon, index) => {
+        return new Promise(async (resolve, reject) => {
+          try {
+            const newPokemon = await getPokemon(pokemon.pokemon.name);
+            listPokemons.push(newPokemon);
+            if (pokemonList.length === index + 1) {
+              resolve(printPokemonTypes(listPokemons, lista));
+            }
+          } catch (error) {
+            reject(error);
+          }
+        });
+      });
+    }
+    // Hacer algo con el valor seleccionado (por ejemplo, mostrarlo en la consola)
+  });
+
   searchBtn.addEventListener("click", async () => {
     console.log(elSearch.value);
     if (elSearch.value.length > 0) {
-      const pokemon = await getPokemon(elSearch.value);
-      printPokemon(pokemon, pokemonMainEl);
+      const pokemonsearch = await getPokemon(elSearch.value);
+      printPokemon(pokemonsearch, pokemonMainEl);
       elSearch.value = "";
+
+      const pokemonList = await getPokemonsType(pokemonsearch.type);
+      console.log(pokemonList);
+      printPokemon(pokemonsearch, pokemonMainEl);
+
+      pokemonList.forEach(async (pokemon, index) => {
+        return new Promise(async (resolve, reject) => {
+          try {
+            const newPokemon = await getPokemon(pokemon.pokemon.name);
+            listPokemons.push(newPokemon);
+            if (pokemonList.length === index + 1) {
+              resolve(printPokemonTypes(listPokemons, lista));
+            }
+          } catch (error) {
+            reject(error);
+          }
+        });
+      });
     }
   });
 });
